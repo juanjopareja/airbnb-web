@@ -1,0 +1,59 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.form {
+    margin: 5rem auto 2rem auto;
+    background-color: var.$white;
+    border-radius: 5rem;
+    box-shadow: 0px 3px 7px 0px var.$grey;
+    padding: 3rem 0;
+
+    @include mix.desktop { 
+        display: flex;
+        justify-content: space-between;
+        max-width: 90rem;
+        padding: 0;
+    }
+
+    &__field {
+        padding: 1rem 2rem;
+        display: flex;
+        flex-direction: column;
+
+        &:nth-child(1) {
+            @include mix.desktop { 
+                padding-left: 4rem;
+            }
+        }
+
+        &:hover {
+            background-color: #f0f0f0;
+            border-radius: 5rem;
+            box-shadow: 0px 6px 20px rgb(0 0 0 / 40%);
+        }
+    }
+
+    &__label {
+        font-size: 1.2rem;
+        font-weight: 900;
+    }
+
+    &__input {
+        border: none;
+        width: 100%;
+        color: var.$grey;
+    }
+
+    &__submit {
+        display: block;
+        height: 4rem;
+        border: none;
+        border-radius: 2rem;
+        background-image: radial-gradient(circle, rgb(255, 56, 92) 0%, var.$secondary 100%);
+        padding: 0 2.5rem;
+        color: var.$white;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+}
