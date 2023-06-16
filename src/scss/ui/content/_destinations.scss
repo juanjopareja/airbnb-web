@@ -1,0 +1,32 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.destinations {
+    &__grid {
+        @include mix.grid(1, 2rem);
+        
+        @include mix.tablet {
+            @include mix.grid(2, 2rem);
+        }
+
+        @include mix.desktop {
+            @include mix.grid(4, 2rem);
+        }
+    }
+}
+
+.destination {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2rem;
+
+    &__image {
+        width: 14rem;
+    }
+
+    &__name,
+    &__distance {
+        margin: 0;
+    }
+}
