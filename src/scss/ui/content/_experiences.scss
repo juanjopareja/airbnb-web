@@ -1,0 +1,30 @@
+@use 'base/variables' as var;
+@use 'base/mixins' as mix;
+
+.experiences {
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 30rem);
+        column-gap: 2rem;
+        @include mix.horizontalScroll;
+
+        @include mix.tablet { 
+            @include mix.grid(3, 2rem);
+        }
+    }
+}
+
+.experience {
+    &__image {
+        border-radius: 1rem;
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 2rem;
+    }
+
+    &__description {
+        font-size: 1.8rem;
+    }
+}
